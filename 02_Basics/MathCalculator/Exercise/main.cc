@@ -15,8 +15,8 @@ int main()
     double pi_calculated = calculate_pi(num_iterations);
 
     std::cout << std::setprecision(30);
-    std::cout << "pi (calculated): " << pi_calculated << '\n';
-    std::cout << "pi (correct): " << pi << '\n';
+    std::cout << "pi (calculated): \t" << pi_calculated << '\n';
+    std::cout << "pi (correct): \t\t" << pi << '\n';
 
     std::uint8_t dec = 0b10001110;
     print_dec_to_bin(dec);

@@ -9,27 +9,27 @@ double calculate_pi(const std::uint32_t num_iterations)
 
     for (std::uint32_t n = 0; n <= num_iterations; n++)
     {
-        calculate += ((1.0/(4.0*n+1.0)) - (1.0/(4.0*n+3.0)));
+        calculate += (( 1.0 / (4.0 * n + 1.0) ) - ( 1.0 / (4.0 * n + 3.0) ));
     }
-    calculate*=4;
-    return calculate;
+    return calculate*4;
 }
 
 void print_dec_to_bin(std::uint8_t value)
 {
-    std::uint32_t binary=0;
-    while(value>0)
+    std::cout << "Die Dezimalzahl : " << static_cast<std::uint32_t>(value) << " in binär ist : 0b";
+    for (std::int8_t exponent = 7; exponent >= 0; exponent--)
     {
-        if (value%2 == 0)
+        std::uint8_t exponenti8 = static_cast<std::uint8_t>(std::pow(2,exponent));
+
+        if (value >= exponenti8)
         {
-            binary*=10;
+            std::cout << "1";
+            value -= exponenti8;
         }
         else
         {
-            binary+=1;
+            std::cout << "0";
         }
-        value/=2;
     }
-
-    std::cout << binary;
+    std::cout << "\n\n";
 }
