@@ -9,7 +9,7 @@ double calculate_pi(const std::uint32_t num_iterations)
 
     for (std::uint32_t n = 0; n <= num_iterations; n++)
     {
-        calculate += ((1/(4*n+1)) - (1/(4*n+3)));
+        calculate += ((1.0/(4.0*n+1.0)) - (1.0/(4.0*n+3.0)));
     }
     calculate*=4;
     return calculate;
