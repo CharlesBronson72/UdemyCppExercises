@@ -9,14 +9,22 @@ void test_cases();
 int main()
 {
     char in_text[50]{};
+    char copy_text[50]{};
     char compare_text1[50]{"jan"};
     char compare_text2[50]{"ja"};
 
     std::cout << "Please enter any text: ";
     std::cin >> in_text;
 
-    std::cout << "to_upper_case: " << to_upper_case(in_text) << '\n';
-    std::cout << "to_lower_case: " << to_lower_case(in_text) << '\n';
+    char *toupca = to_upper_case(in_text);
+    std::cout << "to_upper_case: " << toupca << '\n';
+    delete toupca;
+    toupca = nullptr;
+    char *toloca = to_lower_case(in_text);
+    std::cout << "to_lower_case: " << toloca << '\n';
+    delete toloca;
+    toloca = nullptr;
+    std::cout << "origin: " << in_text << '\n';
     std::cout << "string_length: " << string_length(in_text) << '\n';
     std::cout << std::boolalpha;
     std::cout << "jan == jan: " << string_equal(in_text, compare_text1) << '\n';
